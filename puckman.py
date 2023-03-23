@@ -135,12 +135,35 @@ def move():
         if valid(point + course):
             point.move(course)  
         else:
-            options = [
-                vector(10, 0),      #Velocidad de fantasmas
-                vector(-10, 0),
+            print(f"El fantasma está en {point.x}, {point.y}")
+            print(f"Puckman está en {puckman.x}, {puckman.y}")
+            # Checar posicion de puckman con respecto al fantasma
+            # Cuadrante I
+            if (point.x < puckman.x and point.y < puckman.y):
+                options = [
+                vector(10, 0),      
                 vector(0, 10),
+                ]
+            # Cuadrante II
+            elif (point.x > puckman.x and point.y < puckman.y):
+                options = [
+                vector(-10, 0),      
+                vector(0, 10),
+                ]
+            # Cuadrante III
+            elif (point.x > puckman.x and point.y > puckman.y):
+                options = [
+                vector(-10, 0),      
                 vector(0, -10),
-            ]
+                ]
+            # Cuadrante IV
+            else:
+                options = [
+                vector(10, 0),      
+                vector(0, -10),
+                ]
+            # Velocidad de fantasmas aumentado de 5 a 10
+                
             plan = choice(options)
             course.x = plan.x
             course.y = plan.y
