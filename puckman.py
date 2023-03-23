@@ -50,6 +50,7 @@ tiles = [
 ]
 # fmt: on
 
+#a
 
 def square(x, y):
     """Draw square using path at (x, y)."""
