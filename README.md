@@ -1,4 +1,4 @@
-# Game_PacMan
+# Puckman game
 
 Carlos Alberto Mendoza Medina [A01661896]
 
